@@ -371,11 +371,11 @@
             gap: 5px;
         }
 
-        /* ================= SECCIÓN DE VIDEOS ================= */
+        /* ================= SECCIÓN DE VIDEOS (CUADRÍCULA DE 4) ================= */
         .videos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
         }
 
         .video-card {
@@ -385,6 +385,11 @@
             box-shadow: var(--sombra-fuerte);
             border: 2px solid var(--rosa-pastel);
             position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
         }
 
         .video-wrapper {
@@ -622,6 +627,7 @@
         @media (max-width: 600px) {
             header h1 { font-size: 3.2rem; }
             .reloj-grid { grid-template-columns: repeat(2, 1fr); }
+            .videos-grid { grid-template-columns: 1fr; }
             .carta-contenedor { padding: 35px 25px; }
             .titulo-seccion { font-size: 2.6rem; }
         }
@@ -696,7 +702,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 1 (Por ejemplo: img/foto1.jpg) -->
-                    <img src="foto1.jpg"Foto 1">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Foto 1">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -711,7 +717,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 2 (Por ejemplo: img/foto2.jpg) -->
-                    <img src="foto2.jpg" alt="Foto 2">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Foto 2">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -726,7 +732,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 3 (Por ejemplo: img/foto3.jpg) -->
-                    <img src="foto3.jpg" alt="Foto 3">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Foto 3">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -741,7 +747,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 4 (Por ejemplo: img/foto4.jpg) -->
-                    <img src="foto4.jpg" alt="Foto 4">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" alt="Foto 4">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -756,7 +762,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 5 (Por ejemplo: img/foto5.jpg) -->
-                    <img src="foto5.jpg" alt="Foto 5">
+                    <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80" alt="Foto 5">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -771,7 +777,7 @@
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 6 (Por ejemplo: img/foto6.jpg) -->
-                    <img src="foto6.jpg" alt="Foto 6">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Foto 6">
                     
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -785,7 +791,7 @@
         </div>
     </section>
 
-    <!-- ================= SECCIÓN: VIDEOS ================= -->
+    <!-- ================= SECCIÓN: 4 VIDEOS ================= -->
     <section id="videos">
         <h2 class="titulo-seccion">Nuestros Videos</h2>
         <p class="subtitulo-seccion">Pequeños fragmentos de nuestra felicidad en movimiento 🎬</p>
@@ -797,7 +803,7 @@
                 <div class="video-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 1 (Por ejemplo: videos/video1.mp4) -->
                     <video controls>
-                        <source src="video1.mp4" type="video/mp4">
+                        <source src="videos/video1.mp4" type="video/mp4">
                         Tu navegador no soporta reproducción de video.
                     </video>
                     <label class="upload-overlay">
@@ -816,7 +822,7 @@
                 <div class="video-wrapper">
                     <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 2 (Por ejemplo: videos/video2.mp4) -->
                     <video controls>
-                        <source src="video2.mp4" type="video/mp4">
+                        <source src="videos/video2.mp4" type="video/mp4">
                         Tu navegador no soporta reproducción de video.
                     </video>
                     <label class="upload-overlay">
@@ -827,6 +833,44 @@
                 <div class="video-info">
                     <h3>Nuestras Aventuras</h3>
                     <p>Por mil viajes, salidas y locuras más a tu lado, Paulina.</p>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 3 (Por ejemplo: videos/video3.mp4) -->
+                    <video controls>
+                        <source src="videos/video3.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                    <label class="upload-overlay">
+                        <i class="fa-solid fa-video"></i> Probar Video
+                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
+                    </label>
+                </div>
+                <div class="video-info">
+                    <h3>Instantes Inolvidables</h3>
+                    <p>Mirarte ser feliz es lo más hermoso de mi día a día.</p>
+                </div>
+            </div>
+
+            <!-- VIDEO 4 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 4 (Por ejemplo: videos/video4.mp4) -->
+                    <video controls>
+                        <source src="videos/video4.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                    <label class="upload-overlay">
+                        <i class="fa-solid fa-video"></i> Probar Video
+                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
+                    </label>
+                </div>
+                <div class="video-info">
+                    <h3>3 Años de Amor</h3>
+                    <p>Gracias por cada abrazo, cada beso y cada recuerdo juntos.</p>
                 </div>
             </div>
 
@@ -938,8 +982,6 @@
             const ahora = new Date();
             const diferencia = ahora - FECHA_INICIO;
 
-            // Calcula los días reales transcurridos, pero asegura mostrar mínimo 1,096
-            // para que desde hoy y mañana vea exactamente los 1,096 días con formato
             const diasCalculados = Math.floor(diferencia / (1000 * 60 * 60 * 24));
             const diasMostrar = Math.max(DIAS_ANIVERSARIO, diasCalculados);
 
