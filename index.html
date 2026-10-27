@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Felices 3 Años, Paulina ❤️</title>
     
-    <!-- Fuentes de Google: Dancing Script (Romántica) y Quicksand (Moderna) -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ================= VARIABLES DE COLOR ================= */
         :root {
             --blanco: #ffffff;
             --rosa-fondo: #fff0f6;
@@ -51,7 +51,7 @@
             font-family: 'Dancing Script', cursive;
         }
 
-        /* ================= PANTALLA DE BIENVENIDA ================= */
+        /* PANTALLA DE BIENVENIDA */
         #welcome-screen {
             position: fixed;
             top: 0;
@@ -120,7 +120,7 @@
             color: var(--morado-oscuro);
         }
 
-        /* ================= NAVEGACIÓN Y BARRA SUPERIOR ================= */
+        /* NAVEGACIÓN */
         nav {
             position: fixed;
             top: 0;
@@ -165,12 +165,7 @@
             font-family: 'Quicksand', sans-serif;
         }
 
-        .btn-small:hover {
-            opacity: 0.9;
-            transform: scale(1.03);
-        }
-
-        /* ================= HERO / PORTADA ================= */
+        /* PORTADA */
         header {
             min-height: 100vh;
             display: flex;
@@ -211,7 +206,7 @@
             line-height: 1.6;
         }
 
-        /* ================= CONTADOR DE TIEMPO ================= */
+        /* CONTADOR */
         .contador-container {
             background: rgba(255, 255, 255, 0.9);
             border: 2px solid var(--rosa-pastel);
@@ -257,7 +252,6 @@
             text-transform: uppercase;
         }
 
-        /* ================= SECCIONES GENERALES ================= */
         section {
             padding: 70px 20px;
             max-width: 1100px;
@@ -278,7 +272,7 @@
             font-weight: 600;
         }
 
-        /* ================= GALERÍA DE FOTOS POLAROID ================= */
+        /* GALERÍA POLAROID */
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -297,13 +291,8 @@
             border: 1px solid var(--rosa-pastel);
         }
 
-        .polaroid:nth-child(odd) {
-            transform: rotate(-2deg);
-        }
-
-        .polaroid:nth-child(even) {
-            transform: rotate(2deg);
-        }
+        .polaroid:nth-child(odd) { transform: rotate(-2deg); }
+        .polaroid:nth-child(even) { transform: rotate(2deg); }
 
         .polaroid:hover {
             transform: rotate(0deg) translateY(-10px) scale(1.02);
@@ -324,11 +313,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .polaroid:hover img {
-            transform: scale(1.08);
         }
 
         .polaroid-caption {
@@ -348,7 +332,6 @@
             margin-top: 4px;
         }
 
-        /* Botón flotante para probar fotos en modo vista previa */
         .upload-overlay {
             position: absolute;
             bottom: 10px;
@@ -371,10 +354,10 @@
             gap: 5px;
         }
 
-        /* ================= SECCIÓN DE VIDEOS (CUADRÍCULA DE 4) ================= */
+        /* SECCIÓN DE 4 VIDEOS */
         .videos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -385,11 +368,6 @@
             box-shadow: var(--sombra-fuerte);
             border: 2px solid var(--rosa-pastel);
             position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
         }
 
         .video-wrapper {
@@ -404,7 +382,8 @@
         .video-wrapper video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background: #000;
         }
 
         .video-info {
@@ -423,7 +402,7 @@
             margin-top: 5px;
         }
 
-        /* ================= RAZONES POR LAS QUE TE AMO (TARJETAS GIRATORIAS) ================= */
+        /* TARJETAS GIRATORIAS */
         .razones-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -478,9 +457,7 @@
             margin-bottom: 12px;
         }
 
-        .flip-card-front h3 {
-            font-size: 1.6rem;
-        }
+        .flip-card-front h3 { font-size: 1.6rem; }
 
         .flip-card-back {
             background: linear-gradient(135deg, var(--fucsia), var(--morado));
@@ -490,7 +467,7 @@
             line-height: 1.5;
         }
 
-        /* ================= CARTA DE AMOR ================= */
+        /* CARTA DE AMOR */
         .carta-contenedor {
             background: var(--blanco);
             padding: 50px 40px;
@@ -500,26 +477,6 @@
             margin: 0 auto;
             position: relative;
             border: 2px solid var(--rosa-pastel);
-        }
-
-        .carta-contenedor::before {
-            content: '\f004';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--fucsia-intenso);
-            color: var(--blanco);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            box-shadow: 0 5px 15px rgba(214, 31, 124, 0.4);
         }
 
         .carta-texto {
@@ -538,7 +495,7 @@
             margin-top: 30px;
         }
 
-        /* ================= LIGHTBOX (PANTALLA COMPLETA) ================= */
+        /* LIGHTBOX */
         #lightbox {
             position: fixed;
             top: 0;
@@ -555,16 +512,13 @@
             padding: 20px;
         }
 
-        #lightbox.active {
-            display: flex;
-        }
+        #lightbox.active { display: flex; }
 
         #lightbox img {
             max-width: 90%;
             max-height: 75vh;
             border-radius: 12px;
             border: 6px solid var(--blanco);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
         #lightbox-caption {
@@ -584,7 +538,6 @@
             cursor: pointer;
         }
 
-        /* ================= CORAZONES FLOTANTES ================= */
         .heart-particle {
             position: fixed;
             bottom: -20px;
@@ -594,14 +547,8 @@
         }
 
         @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-110vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
         }
 
         @keyframes bounce {
@@ -610,7 +557,6 @@
             60% {transform: translateY(-10px);}
         }
 
-        /* ================= FOOTER ================= */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -619,11 +565,6 @@
             margin-top: 50px;
         }
 
-        footer p {
-            font-size: 1rem;
-        }
-
-        /* ================= RESPONSIVE ================= */
         @media (max-width: 600px) {
             header h1 { font-size: 3.2rem; }
             .reloj-grid { grid-template-columns: repeat(2, 1fr); }
@@ -635,7 +576,6 @@
 </head>
 <body>
 
-    <!-- ================= PANTALLA DE BIENVENIDA ================= -->
     <div id="welcome-screen">
         <div class="gift-icon" onclick="abrirRegalo()">
             <i class="fa-solid fa-heart-circle-bolt"></i>
@@ -647,11 +587,10 @@
         </button>
     </div>
 
-    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
     <nav>
         <a href="#" class="nav-logo">Paulina & Yo ❤️</a>
         <div class="nav-controls">
-            <button class="btn-small" onclick="togglePreviewMode()" id="btn-preview" title="Úsalo para probar cómo se ven tus fotos antes de subirlas a GitHub">
+            <button class="btn-small" onclick="togglePreviewMode()" id="btn-preview">
                 <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Probar mis Fotos</span>
             </button>
             <button class="btn-small" onclick="lanzarLluviaCorazones()">
@@ -660,7 +599,6 @@
         </div>
     </nav>
 
-    <!-- ================= PORTADA Y CONTADOR ================= -->
     <header>
         <span class="badge-aniversario">✨ ¡Felices 3 Años de Aniversario, mi amor! ✨</span>
         <h1>Para ti, Paulina</h1>
@@ -691,19 +629,15 @@
         </div>
     </header>
 
-    <!-- ================= SECCIÓN: GALERÍA DE FOTOS ================= -->
+    <!-- SECCIÓN DE FOTOS (Lee foto1.jpg a foto6.jpg en la raíz o cámbialas) -->
     <section id="fotos">
         <h2 class="titulo-seccion">Nuestras Fotos Favoritas</h2>
         <p class="subtitulo-seccion">Haz clic en cualquier foto para verla en grande 📸</p>
 
         <div class="galeria-grid">
-            
-            <!-- FOTO 1 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 1 (Por ejemplo: img/foto1.jpg) -->
-                    <img src="foto1.jpg" alt="Foto 1">
-                    
+                    <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80'" alt="Foto 1">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -713,12 +647,9 @@
                 <span class="polaroid-fecha">Momento inolvidable ❤️</span>
             </div>
 
-            <!-- FOTO 2 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 2 (Por ejemplo: img/foto2.jpg) -->
-                    <img src="foto2.jpg" alt="Foto 2">
-                    
+                    <img src="foto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80'" alt="Foto 2">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -728,12 +659,9 @@
                 <span class="polaroid-fecha">Mi lugar seguro ✨</span>
             </div>
 
-            <!-- FOTO 3 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 3 (Por ejemplo: img/foto3.jpg) -->
-                    <img src="foto3.jpg" alt="Foto 3">
-                    
+                    <img src="foto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'" alt="Foto 3">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -743,12 +671,9 @@
                 <span class="polaroid-fecha">Para siempre 💜</span>
             </div>
 
-            <!-- FOTO 4 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 4 (Por ejemplo: img/foto4.jpg) -->
-                    <img src="foto4.jpg" alt="Foto 4">
-                    
+                    <img src="foto4.jpg" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80'" alt="Foto 4">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -758,12 +683,9 @@
                 <span class="polaroid-fecha">Contigo todo es mejor 🌸</span>
             </div>
 
-            <!-- FOTO 5 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 5 (Por ejemplo: img/foto5.jpg) -->
-                    <img src="foto5.jpg" alt="Foto 5">
-                    
+                    <img src="foto5.jpg" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80'" alt="Foto 5">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -773,12 +695,9 @@
                 <span class="polaroid-fecha">Te amo infinitamente 💖</span>
             </div>
 
-            <!-- FOTO 6 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 6 (Por ejemplo: img/foto6.jpg) -->
-                    <img src="foto6.jpg" alt="Foto 6">
-                    
+                    <img src="foto6.jpg" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80'" alt="Foto 6">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
                         <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
@@ -787,11 +706,10 @@
                 <div class="polaroid-caption">3 años de recuerdos hermosos</div>
                 <span class="polaroid-fecha">Tú y yo 🌷</span>
             </div>
-
         </div>
     </section>
 
-    <!-- ================= SECCIÓN: 4 VIDEOS ================= -->
+    <!-- SECCIÓN DE 4 VIDEOS (Lee directamente video1.mp4, video2.mp4, video3.mp4 y video4.mp4 de tu repositorio) -->
     <section id="videos">
         <h2 class="titulo-seccion">Nuestros Videos</h2>
         <p class="subtitulo-seccion">Pequeños fragmentos de nuestra felicidad en movimiento 🎬</p>
@@ -801,11 +719,7 @@
             <!-- VIDEO 1 -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 1 (Por ejemplo: videos/video1.mp4) -->
-                    <video controls>
-                        <source src="#video1.mp4" type="video/mp4">
-                        Tu navegador no soporta reproducción de video.
-                    </video>
+                    <video src="video1.mp4" controls preload="metadata" playsinline></video>
                     <label class="upload-overlay">
                         <i class="fa-solid fa-video"></i> Probar Video
                         <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
@@ -820,11 +734,7 @@
             <!-- VIDEO 2 -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 2 (Por ejemplo: videos/video2.mp4) -->
-                    <video controls>
-                        <source src="video2.mp4" type="video/mp4">
-                        Tu navegador no soporta reproducción de video.
-                    </video>
+                    <video src="video2.mp4" controls preload="metadata" playsinline></video>
                     <label class="upload-overlay">
                         <i class="fa-solid fa-video"></i> Probar Video
                         <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
@@ -839,11 +749,7 @@
             <!-- VIDEO 3 -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 3 (Por ejemplo: videos/video3.mp4) -->
-                    <video controls>
-                        <source src="video3.mp4" type="video/mp4">
-                        Tu navegador no soporta reproducción de video.
-                    </video>
+                    <video src="video3.mp4" controls preload="metadata" playsinline></video>
                     <label class="upload-overlay">
                         <i class="fa-solid fa-video"></i> Probar Video
                         <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
@@ -858,11 +764,7 @@
             <!-- VIDEO 4 -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 4 (Por ejemplo: videos/video4.mp4) -->
-                    <video controls>
-                        <source src="video4.mp4" type="video/mp4">
-                        Tu navegador no soporta reproducción de video.
-                    </video>
+                    <video src="video4.mp4" controls preload="metadata" playsinline></video>
                     <label class="upload-overlay">
                         <i class="fa-solid fa-video"></i> Probar Video
                         <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
@@ -877,7 +779,6 @@
         </div>
     </section>
 
-    <!-- ================= SECCIÓN: RAZONES POR LAS QUE TE AMO ================= -->
     <section id="razones">
         <h2 class="titulo-seccion">Cosas que amo de ti</h2>
         <p class="subtitulo-seccion">Toca cada tarjeta para descubrir un mensaje secreto 💌</p>
@@ -933,15 +834,12 @@
         </div>
     </section>
 
-    <!-- ================= SECCIÓN: CARTA DE AMOR ================= -->
     <section id="carta">
         <h2 class="titulo-seccion">Una Carta para Ti</h2>
         <p class="subtitulo-seccion">Con todo mi corazón en nuestro tercer aniversario ✨</p>
 
         <div class="carta-contenedor">
-            <p class="carta-texto">
-                <strong>Mi querida Paulina,</strong>
-            </p>
+            <p class="carta-texto"><strong>Mi querida Paulina,</strong></p>
             <p class="carta-texto">
                 Hoy cumplimos 3 años juntos —1,096 días de amor— y no quería dejar pasar la oportunidad de hacerte algo diferente y especial. Desde que llegaste a mi vida, todo tiene un brillo distinto. Eres mi paz, mi alegría diaria, mi cómplice de risas y la persona con la que quiero compartir cada logro y cada sueño.
             </p>
@@ -951,64 +849,47 @@
             <p class="carta-texto">
                 ¡Felices 3 años, mi amor! Que sigamos sumando miles de días, meses y años más llenos de amor, complicidad y felicidad.
             </p>
-            <div class="carta-firma">
-                Con todo mi amor, siempre tuyo ❤️
-            </div>
+            <div class="carta-firma">Con todo mi amor, siempre tuyo ❤️</div>
         </div>
     </section>
 
-    <!-- ================= LIGHTBOX PARA VER FOTOS EN GRANDE ================= -->
     <div id="lightbox" onclick="cerrarLightbox()">
         <span class="close-lightbox">&times;</span>
         <img id="lightbox-img" src="" alt="Vista ampliada">
         <div id="lightbox-caption"></div>
     </div>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
         <p>Hecho con todo el amor del mundo para celebrar nuestros 3 años, <strong>Paulina</strong> 💖</p>
     </footer>
 
-    <!-- ================= JAVASCRIPT ================= -->
     <script>
-        // =========================================================================
-        // CONFIGURADO PARA 3 AÑOS (1,096 DÍAS)
-        // Fecha de inicio: 27 de octubre de 2023 (incluye el año bisiesto 2024 = 1,096 días)
-        // =========================================================================
         const FECHA_INICIO = new Date('2023-10-27T00:00:00'); 
         const DIAS_ANIVERSARIO = 1096;
 
         function actualizarContador() {
             const ahora = new Date();
             const diferencia = ahora - FECHA_INICIO;
-
             const diasCalculados = Math.floor(diferencia / (1000 * 60 * 60 * 24));
             const diasMostrar = Math.max(DIAS_ANIVERSARIO, diasCalculados);
 
-            const horas = ahora.getHours();
-            const minutos = ahora.getMinutes();
-            const segundos = ahora.getSeconds();
-
             document.getElementById('dias').innerText = diasMostrar.toLocaleString('en-US');
-            document.getElementById('horas').innerText = horas;
-            document.getElementById('minutos').innerText = minutos;
-            document.getElementById('segundos').innerText = segundos;
+            document.getElementById('horas').innerText = ahora.getHours();
+            document.getElementById('minutos').innerText = ahora.getMinutes();
+            document.getElementById('segundos').innerText = ahora.getSeconds();
         }
 
         setInterval(actualizarContador, 1000);
         actualizarContador();
 
-        // 2. ABRIR PANTALLA DE BIENVENIDA
         function abrirRegalo() {
             document.getElementById('welcome-screen').classList.add('hidden');
             lanzarLluviaCorazones();
         }
 
-        // 3. LIGHTBOX DE FOTOS
         function abrirLightbox(elementoPolaroid) {
             const img = elementoPolaroid.querySelector('img').src;
             const caption = elementoPolaroid.querySelector('.polaroid-caption').innerText;
-            
             document.getElementById('lightbox-img').src = img;
             document.getElementById('lightbox-caption').innerText = caption;
             document.getElementById('lightbox').classList.add('active');
@@ -1018,7 +899,6 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // 4. MODO VISTA PREVIA PARA PROBAR TUS FOTOS/VIDEOS EN EL NAVEGADOR
         function togglePreviewMode() {
             document.body.classList.toggle('preview-mode');
             const btn = document.getElementById('btn-preview');
@@ -1050,31 +930,21 @@
             }
         }
 
-        // 5. ANIMACIÓN DE CORAZONES FLOTANTES
         function crearCorazon() {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
-            
             const iconos = ['❤️', '💖', '💗', '💜', '🌸', '✨'];
             heart.innerText = iconos[Math.floor(Math.random() * iconos.length)];
-            
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
-            
             const duracion = Math.random() * 4 + 4;
             heart.style.animationDuration = duracion + 's';
-
             document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, duracion * 1000);
+            setTimeout(() => heart.remove(), duracion * 1000);
         }
 
-        // Corazones suaves constantes de fondo
         setInterval(crearCorazon, 900);
 
-        // Explosión de corazones al tocar el botón "Te Amo"
         function lanzarLluviaCorazones() {
             for (let i = 0; i < 25; i++) {
                 setTimeout(crearCorazon, i * 80);
