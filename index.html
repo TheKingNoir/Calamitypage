@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario, Paulina ❤️</title>
+    
+    <!-- Fuentes de Google: Dancing Script (Romántica) y Quicksand (Moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ================= VARIABLES DE COLOR ================= */
+        :root {
+            --blanco: #ffffff;
+            --rosa-fondo: #fff0f6;
+            --rosa-pastel: #ffdeeb;
+            --rosa-medio: #faa2c1;
+            --fucsia: #f03e9d;
+            --fucsia-intenso: #d61f7c;
+            --morado-claro: #e599f7;
+            --morado: #862e9c;
+            --morado-oscuro: #4a154b;
+            --sombra-suave: 0 10px 30px rgba(240, 62, 157, 0.15);
+            --sombra-fuerte: 0 15px 35px rgba(134, 46, 156, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--blanco) 0%, var(--rosa-fondo) 50%, #f3d9fa 100%);
+            color: var(--morado-oscuro);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, .fuente-romantica {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* ================= PANTALLA DE BIENVENIDA ================= */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--morado-oscuro), var(--morado), var(--fucsia));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: var(--blanco);
+            text-align: center;
+            padding: 20px;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #welcome-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .gift-icon {
+            font-size: 5rem;
+            color: var(--rosa-pastel);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+        }
+
+        #welcome-screen h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        #welcome-screen p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 400px;
+            color: var(--rosa-pastel);
+        }
+
+        .btn-romantico {
+            background: var(--blanco);
+            color: var(--fucsia-intenso);
+            border: none;
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-romantico:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--rosa-pastel);
+            color: var(--morado-oscuro);
+        }
+
+        /* ================= NAVEGACIÓN Y BARRA SUPERIOR ================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(240, 62, 157, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--fucsia-intenso);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-small {
+            background: linear-gradient(45deg, var(--fucsia), var(--morado));
+            color: var(--blanco);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .btn-small:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+
+        /* ================= HERO / PORTADA ================= */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            position: relative;
+        }
+
+        .badge-aniversario {
+            background: var(--rosa-pastel);
+            color: var(--morado);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            border: 1px solid var(--rosa-medio);
+            box-shadow: var(--sombra-suave);
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, var(--fucsia-intenso), var(--morado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        header p.subtitulo {
+            font-size: 1.25rem;
+            max-width: 600px;
+            color: var(--morado-oscuro);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* ================= CONTADOR DE TIEMPO ================= */
+        .contador-container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--rosa-pastel);
+            padding: 25px 30px;
+            border-radius: 25px;
+            box-shadow: var(--sombra-fuerte);
+            max-width: 700px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .contador-titulo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--morado);
+            margin-bottom: 15px;
+        }
+
+        .reloj-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .tiempo-caja {
+            background: linear-gradient(135deg, var(--rosa-fondo), var(--rosa-pastel));
+            padding: 15px 10px;
+            border-radius: 15px;
+            border: 1px solid var(--rosa-medio);
+        }
+
+        .tiempo-numero {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--fucsia-intenso);
+            display: block;
+        }
+
+        .tiempo-label {
+            font-size: 0.85rem;
+            color: var(--morado-oscuro);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* ================= SECCIONES GENERALES ================= */
+        section {
+            padding: 70px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 3.2rem;
+            color: var(--morado);
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-seccion {
+            text-align: center;
+            color: var(--fucsia-intenso);
+            margin-bottom: 45px;
+            font-weight: 600;
+        }
+
+        /* ================= GALERÍA DE FOTOS POLAROID ================= */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 10px;
+        }
+
+        .polaroid {
+            background: var(--blanco);
+            padding: 15px 15px 25px 15px;
+            border-radius: 12px;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--rosa-pastel);
+        }
+
+        .polaroid:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-10px) scale(1.02);
+            box-shadow: var(--sombra-fuerte);
+            z-index: 10;
+        }
+
+        .polaroid-img-wrapper {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--rosa-fondo);
+            position: relative;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .polaroid:hover img {
+            transform: scale(1.08);
+        }
+
+        .polaroid-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 15px;
+            color: var(--morado-oscuro);
+        }
+
+        .polaroid-fecha {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--fucsia);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Botón flotante para probar fotos en modo vista previa */
+        .upload-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--fucsia-intenso);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 5;
+        }
+
+        body.preview-mode .upload-overlay {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ================= SECCIÓN DE VIDEOS ================= */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .video-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--sombra-fuerte);
+            border: 2px solid var(--rosa-pastel);
+            position: relative;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #1a091e;
+            aspect-ratio: 16 / 9;
+            position: relative;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-info {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .video-info h3 {
+            font-size: 1.8rem;
+            color: var(--morado);
+        }
+
+        .video-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* ================= RAZONES POR LAS QUE TE AMO (TARJETAS GIRATORIAS) ================= */
+        .razones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner,
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, var(--blanco), var(--rosa-pastel));
+            border: 2px solid var(--rosa-medio);
+            color: var(--morado);
+        }
+
+        .flip-card-front i {
+            font-size: 2.5rem;
+            color: var(--fucsia);
+            margin-bottom: 12px;
+        }
+
+        .flip-card-front h3 {
+            font-size: 1.6rem;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--fucsia), var(--morado));
+            color: var(--blanco);
+            transform: rotateY(180deg);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ================= CARTA DE AMOR ================= */
+        .carta-contenedor {
+            background: var(--blanco);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: var(--sombra-fuerte);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid var(--rosa-pastel);
+        }
+
+        .carta-contenedor::before {
+            content: '\f004';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--fucsia-intenso);
+            color: var(--blanco);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 15px rgba(214, 31, 124, 0.4);
+        }
+
+        .carta-texto {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--morado-oscuro);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .carta-firma {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4rem;
+            color: var(--fucsia-intenso);
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        /* ================= LIGHTBOX (PANTALLA COMPLETA) ================= */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 21, 75, 0.92);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        #lightbox.active {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: 12px;
+            border: 6px solid var(--blanco);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        #lightbox-caption {
+            color: var(--blanco);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: var(--blanco);
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        /* ================= CORAZONES FLOTANTES ================= */
+        .heart-particle {
+            position: fixed;
+            bottom: -20px;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--morado-oscuro);
+            color: var(--rosa-pastel);
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 600px) {
+            header h1 { font-size: 3.2rem; }
+            .reloj-grid { grid-template-columns: repeat(2, 1fr); }
+            .carta-contenedor { padding: 35px 25px; }
+            .titulo-seccion { font-size: 2.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PANTALLA DE BIENVENIDA ================= -->
+    <div id="welcome-screen">
+        <div class="gift-icon" onclick="abrirRegalo()">
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+        </div>
+        <h1>Hola, Paulina ❤️</h1>
+        <p>Preparé este rincón especial para celebrar nuestra historia y todos los momentos hermosos a tu lado.</p>
+        <button class="btn-romantico" onclick="abrirRegalo()">
+            <i class="fa-solid fa-envelope-open-text"></i> Abrir mi regalo
+        </button>
+    </div>
+
+    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
+    <nav>
+        <a href="#" class="nav-logo">Paulina & Yo ❤️</a>
+        <div class="nav-controls">
+            <button class="btn-small" onclick="togglePreviewMode()" id="btn-preview" title="Úsalo para probar cómo se ven tus fotos antes de subirlas a GitHub">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Probar mis Fotos</span>
+            </button>
+            <button class="btn-small" onclick="lanzarLluviaCorazones()">
+                <i class="fa-solid fa-heart"></i> <span>Te Amo</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================= PORTADA Y CONTADOR ================= -->
+    <header>
+        <span class="badge-aniversario">✨ Feliz Aniversario, mi amor ✨</span>
+        <h1>Para ti, Paulina</h1>
+        <p class="subtitulo">
+            Cada día a tu lado es mi aventura favorita. Gracias por llenar mi vida de colores, sonrisas y un amor tan bonito.
+        </p>
+
+        <div class="contador-container">
+            <div class="contador-titulo">✨ Tiempo construyendo nuestra historia juntos ✨</div>
+            <div class="reloj-grid">
+                <div class="tiempo-caja">
+                    <span class="tiempo-numero" id="dias">0</span>
+                    <span class="tiempo-label">Días</span>
+                </div>
+                <div class="tiempo-caja">
+                    <span class="tiempo-numero" id="horas">0</span>
+                    <span class="tiempo-label">Horas</span>
+                </div>
+                <div class="tiempo-caja">
+                    <span class="tiempo-numero" id="minutos">0</span>
+                    <span class="tiempo-label">Minutos</span>
+                </div>
+                <div class="tiempo-caja">
+                    <span class="tiempo-numero" id="segundos">0</span>
+                    <span class="tiempo-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= SECCIÓN: GALERÍA DE FOTOS ================= -->
+    <section id="fotos">
+        <h2 class="titulo-seccion">Nuestras Fotos Favoritas</h2>
+        <p class="subtitulo-seccion">Haz clic en cualquier foto para verla en grande 📸</p>
+
+        <div class="galeria-grid">
+            
+            <!-- FOTO 1 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 1 (Por ejemplo: img/foto1.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Foto 1">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Tu sonrisa ilumina mi mundo</div>
+                <span class="polaroid-fecha">Momento inolvidable ❤️</span>
+            </div>
+
+            <!-- FOTO 2 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 2 (Por ejemplo: img/foto2.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Foto 2">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Juntos en cada paso</div>
+                <span class="polaroid-fecha">Mi lugar seguro ✨</span>
+            </div>
+
+            <!-- FOTO 3 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 3 (Por ejemplo: img/foto3.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Foto 3">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Mis ojos siempre brillan por ti</div>
+                <span class="polaroid-fecha">Para siempre 💜</span>
+            </div>
+
+            <!-- FOTO 4 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 4 (Por ejemplo: img/foto4.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" alt="Foto 4">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Nuestra complicidad única</div>
+                <span class="polaroid-fecha">Contigo todo es mejor 🌸</span>
+            </div>
+
+            <!-- FOTO 5 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 5 (Por ejemplo: img/foto5.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80" alt="Foto 5">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Mi persona favorita</div>
+                <span class="polaroid-fecha">Te amo infinitamente 💖</span>
+            </div>
+
+            <!-- FOTO 6 -->
+            <div class="polaroid" onclick="abrirLightbox(this)">
+                <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 6 (Por ejemplo: img/foto6.jpg) -->
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Foto 6">
+                    
+                    <label class="upload-overlay" onclick="event.stopPropagation()">
+                        <i class="fa-solid fa-camera"></i> Cambiar
+                        <input type="file" accept="image/*" style="display:none" onchange="cambiarImagenPreview(event, this)">
+                    </label>
+                </div>
+                <div class="polaroid-caption">Creando recuerdos hermosos</div>
+                <span class="polaroid-fecha">Tú y yo 🌷</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN: VIDEOS ================= -->
+    <section id="videos">
+        <h2 class="titulo-seccion">Nuestros Videos</h2>
+        <p class="subtitulo-seccion">Pequeños fragmentos de nuestra felicidad en movimiento 🎬</p>
+
+        <div class="videos-grid">
+            
+            <!-- VIDEO 1 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 1 (Por ejemplo: videos/video1.mp4) -->
+                    <video controls>
+                        <source src="videos/video1.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                    <label class="upload-overlay">
+                        <i class="fa-solid fa-video"></i> Probar Video
+                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
+                    </label>
+                </div>
+                <div class="video-info">
+                    <h3>Risas y Momentos Juntos</h3>
+                    <p>Cada segundo contigo se queda grabado en mi corazón.</p>
+                </div>
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE TU VIDEO 2 (Por ejemplo: videos/video2.mp4) -->
+                    <video controls>
+                        <source src="videos/video2.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                    <label class="upload-overlay">
+                        <i class="fa-solid fa-video"></i> Probar Video
+                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
+                    </label>
+                </div>
+                <div class="video-info">
+                    <h3>Nuestras Aventuras</h3>
+                    <p>Por mil viajes, salidas y locuras más a tu lado, Paulina.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN: RAZONES POR LAS QUE TE AMO ================= -->
+    <section id="razones">
+        <h2 class="titulo-seccion">Cosas que amo de ti</h2>
+        <p class="subtitulo-seccion">Toca cada tarjeta para descubrir un mensaje secreto 💌</p>
+
+        <div class="razones-grid">
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                        <h3>Tu Sonrisa</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Porque tienes la sonrisa más linda del mundo, capaz de alegrarme hasta en los días más difíciles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h3>Tu Ternura</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Amo la forma en que me abrazas, cómo me miras y el cariño tan sincero que me entregas cada día.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-star"></i>
+                        <h3>Tu Esencia</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Admiro la mujer increíble que eres, tu fuerza, tu dulzura y todo lo que te hace única, Paulina.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-infinity"></i>
+                        <h3>Nuestro Futuro</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Porque cuando pienso en mis metas y sueños, en todos y cada uno de ellos estás tú a mi lado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN: CARTA DE AMOR ================= -->
+    <section id="carta">
+        <h2 class="titulo-seccion">Una Carta para Ti</h2>
+        <p class="subtitulo-seccion">Con todo mi corazón para la dueña de mis suspiros ✨</p>
+
+        <div class="carta-contenedor">
+            <!-- PUEDES PERSONALIZAR EL TEXTO DE TU CARTA AQUÍ -->
+            <p class="carta-texto">
+                <strong>Mi querida Paulina,</strong>
+            </p>
+            <p class="carta-texto">
+                Hoy celebramos un aniversario más juntos y no quería dejar pasar la oportunidad de hacerte algo diferente y especial. Desde que llegaste a mi vida, todo tiene un brillo distinto. Eres mi paz, mi alegría diaria, mi cómplice de risas y la persona con la que quiero compartir cada logro y cada sueño.
+            </p>
+            <p class="carta-texto">
+                Gracias por tu paciencia, por tus abrazos que todo lo curan, por apoyarme en todo momento y por regalarme los recuerdos más hermosos que tengo. Esta página es solo un pequeño reflejo de lo mucho que significas para mí.
+            </p>
+            <p class="carta-texto">
+                ¡Feliz aniversario, mi amor! Que sigamos sumando días, meses y años llenos de amor, complicidad y felicidad.
+            </p>
+            <div class="carta-firma">
+                Con todo mi amor, siempre tuyo ❤️
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LIGHTBOX PARA VER FOTOS EN GRANDE ================= -->
+    <div id="lightbox" onclick="cerrarLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>Hecho con todo el amor del mundo especialmente para <strong>Paulina</strong> 💖</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // =========================================================================
+        // 1. CONFIGURA AQUÍ LA FECHA EN QUE EMPEZARON A SER NOVIOS (Año, Mes-1, Día)
+        // Formato: 'YYYY-MM-DDTHH:MM:SS' -> Ejemplo: '2024-10-26T00:00:00'
+        // =========================================================================
+        const FECHA_ANIVERSARIO = new Date('2025-10-26T00:00:00'); 
+
+        function actualizarContador() {
+            const ahora = new Date();
+            const diferencia = ahora - FECHA_ANIVERSARIO;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diferencia / 1000 / 60) % 60);
+            const segundos = Math.floor((diferencia / 1000) % 60);
+
+            document.getElementById('dias').innerText = Math.max(0, dias);
+            document.getElementById('horas').innerText = Math.max(0, horas);
+            document.getElementById('minutos').innerText = Math.max(0, minutos);
+            document.getElementById('segundos').innerText = Math.max(0, segundos);
+        }
+
+        setInterval(actualizarContador, 1000);
+        actualizarContador();
+
+        // 2. ABRIR PANTALLA DE BIENVENIDA
+        function abrirRegalo() {
+            document.getElementById('welcome-screen').classList.add('hidden');
+            lanzarLluviaCorazones();
+        }
+
+        // 3. LIGHTBOX DE FOTOS
+        function abrirLightbox(elementoPolaroid) {
+            const img = elementoPolaroid.querySelector('img').src;
+            const caption = elementoPolaroid.querySelector('.polaroid-caption').innerText;
+            
+            document.getElementById('lightbox-img').src = img;
+            document.getElementById('lightbox-caption').innerText = caption;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function cerrarLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // 4. MODO VISTA PREVIA PARA PROBAR TUS FOTOS/VIDEOS EN EL NAVEGADOR
+        function togglePreviewMode() {
+            document.body.classList.toggle('preview-mode');
+            const btn = document.getElementById('btn-preview');
+            if (document.body.classList.contains('preview-mode')) {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Listo</span>';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> <span>Probar mis Fotos</span>';
+            }
+        }
+
+        function cambiarImagenPreview(event, inputElement) {
+            const archivo = event.target.files[0];
+            if (archivo) {
+                const url = URL.createObjectURL(archivo);
+                const contenedor = inputElement.closest('.polaroid-img-wrapper');
+                contenedor.querySelector('img').src = url;
+            }
+        }
+
+        function cambiarVideoPreview(event, inputElement) {
+            const archivo = event.target.files[0];
+            if (archivo) {
+                const url = URL.createObjectURL(archivo);
+                const contenedor = inputElement.closest('.video-wrapper');
+                const video = contenedor.querySelector('video');
+                video.src = url;
+                video.load();
+                video.play();
+            }
+        }
+
+        // 5. ANIMACIÓN DE CORAZONES FLOTANTES
+        function crearCorazon() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+            
+            const iconos = ['❤️', '💖', '💗', '💜', '🌸', '✨'];
+            heart.innerText = iconos[Math.floor(Math.random() * iconos.length)];
+            
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+            
+            const duracion = Math.random() * 4 + 4;
+            heart.style.animationDuration = duracion + 's';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, duracion * 1000);
+        }
+
+        // Corazones suaves constantes de fondo
+        setInterval(crearCorazon, 900);
+
+        // Explosión de corazones al tocar el botón "Te Amo"
+        function lanzarLluviaCorazones() {
+            for (let i = 0; i < 25; i++) {
+                setTimeout(crearCorazon, i * 80);
+            }
+        }
+    </script>
+</body>
+</html>
