@@ -1,6 +1,3 @@
-Aquí tienes el archivo index.html completo y blindado.
-Le incluí un sistema de búsqueda automática de videos en JavaScript al final del código: no importa si tus archivos en el repositorio se llaman video1.mp4 o clip ares 1.mp4, o si tu repositorio tiene espacios en el nombre; el código probará todas las combinaciones posibles automáticamente hasta encontrar cada video y cargarlo en pantalla.
-(Recuerda tener el traductor de Chrome desactivado cuando pegues esto en GitHub para que no te cambie las etiquetas a español).
 <!DOCTYPE html>
 <html lang="es" translate="no" class="notranslate">
 <head>
@@ -369,59 +366,6 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             gap: 5px;
         }
 
-        /* ================= SECCIÓN DE 4 VIDEOS ================= */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .video-card {
-            background: var(--blanco);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: var(--sombra-fuerte);
-            border: 2px solid var(--rosa-pastel);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-wrapper {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #1a091e;
-            aspect-ratio: 16 / 9;
-            position: relative;
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: #000;
-        }
-
-        .video-info {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .video-info h3 {
-            font-size: 1.8rem;
-            color: var(--morado);
-        }
-
-        .video-info p {
-            font-size: 0.95rem;
-            color: #666;
-            margin-top: 5px;
-        }
-
         /* ================= TARJETAS GIRATORIAS ================= */
         .razones-grid {
             display: grid;
@@ -610,7 +554,6 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
         @media (max-width: 600px) {
             header h1 { font-size: 3.2rem; }
             .reloj-grid { grid-template-columns: repeat(2, 1fr); }
-            .videos-grid { grid-template-columns: 1fr; }
             .carta-contenedor { padding: 35px 25px; }
             .titulo-seccion { font-size: 2.6rem; }
         }
@@ -684,6 +627,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 1 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 1 -->
                     <img src="foto1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80';" alt="Foto 1">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -697,6 +641,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 2 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 2 -->
                     <img src="foto2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80';" alt="Foto 2">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -710,6 +655,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 3 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 3 -->
                     <img src="foto3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80';" alt="Foto 3">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -723,6 +669,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 4 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 4 -->
                     <img src="foto4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80';" alt="Foto 4">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -736,6 +683,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 5 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 5 -->
                     <img src="foto5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80';" alt="Foto 5">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -749,6 +697,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             <!-- FOTO 6 -->
             <div class="polaroid" onclick="abrirLightbox(this)">
                 <div class="polaroid-img-wrapper">
+                    <!-- CAMBIA AQUÍ LA RUTA DE LA FOTO 6 -->
                     <img src="foto6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80';" alt="Foto 6">
                     <label class="upload-overlay" onclick="event.stopPropagation()">
                         <i class="fa-solid fa-camera"></i> Cambiar
@@ -757,76 +706,6 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
                 </div>
                 <div class="polaroid-caption">3 años de recuerdos hermosos</div>
                 <span class="polaroid-fecha">Tú y yo 🌷</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECCIÓN DE 4 VIDEOS -->
-    <section id="videos">
-        <h2 class="titulo-seccion">Nuestros Videos</h2>
-        <p class="subtitulo-seccion">Pequeños fragmentos de nuestra felicidad en movimiento 🎬</p>
-
-        <div class="videos-grid">
-            
-            <!-- VIDEO 1 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video id="reproductor-1" controls playsinline preload="metadata"></video>
-                    <label class="upload-overlay">
-                        <i class="fa-solid fa-video"></i> Probar Video
-                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
-                    </label>
-                </div>
-                <div class="video-info">
-                    <h3>Risas y Momentos Juntos</h3>
-                    <p>Cada segundo contigo se queda grabado en mi corazón.</p>
-                </div>
-            </div>
-
-            <!-- VIDEO 2 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video id="reproductor-2" controls playsinline preload="metadata"></video>
-                    <label class="upload-overlay">
-                        <i class="fa-solid fa-video"></i> Probar Video
-                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
-                    </label>
-                </div>
-                <div class="video-info">
-                    <h3>Nuestras Aventuras</h3>
-                    <p>Por mil viajes, salidas y locuras más a tu lado, Paulina.</p>
-                </div>
-            </div>
-
-            <!-- VIDEO 3 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video id="reproductor-3" controls playsinline preload="metadata"></video>
-                    <label class="upload-overlay">
-                        <i class="fa-solid fa-video"></i> Probar Video
-                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
-                    </label>
-                </div>
-                <div class="video-info">
-                    <h3>Instantes Inolvidables</h3>
-                    <p>Mirarte ser feliz es lo más hermoso de mi día a día.</p>
-                </div>
-            </div>
-
-            <!-- VIDEO 4 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video id="reproductor-4" controls playsinline preload="metadata"></video>
-                    <label class="upload-overlay">
-                        <i class="fa-solid fa-video"></i> Probar Video
-                        <input type="file" accept="video/*" style="display:none" onchange="cambiarVideoPreview(event, this)">
-                    </label>
-                </div>
-                <div class="video-info">
-                    <h3>3 Años de Amor</h3>
-                    <p>Gracias por cada abrazo, cada beso y cada recuerdo juntos.</p>
-                </div>
             </div>
 
         </div>
@@ -941,52 +820,13 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
         setInterval(actualizarContador, 1000);
         actualizarContador();
 
-        // 2. BUSCADOR AUTOMÁTICO DE VIDEOS (Prueba todos los nombres posibles en tu GitHub)
-        function cargarVideoInteligente(numeroVideo) {
-            const videoElement = document.getElementById('reproductor-' + numeroVideo);
-            if (!videoElement) return;
-
-            const posiblesRutas = [
-                `video${numeroVideo}.mp4`,
-                `clip ares ${numeroVideo}.mp4`,
-                `clip%20ares%20${numeroVideo}.mp4`,
-                `Video${numeroVideo}.mp4`,
-                `video${numeroVideo}.MP4`,
-                `videos/video${numeroVideo}.mp4`,
-                `videos/clip ares ${numeroVideo}.mp4`
-            ];
-
-            let indice = 0;
-
-            function probarSiguienteRuta() {
-                if (indice < posiblesRutas.length) {
-                    videoElement.src = posiblesRutas[indice];
-                    indice++;
-                }
-            }
-
-            videoElement.onerror = function() {
-                probarSiguienteRuta();
-            };
-
-            probarSiguienteRuta();
-        }
-
-        // Iniciar la carga de los 4 videos automáticamente
-        window.addEventListener('DOMContentLoaded', () => {
-            cargarVideoInteligente(1);
-            cargarVideoInteligente(2);
-            cargarVideoInteligente(3);
-            cargarVideoInteligente(4);
-        });
-
-        // 3. PANTALLA DE BIENVENIDA
+        // 2. PANTALLA DE BIENVENIDA
         function abrirRegalo() {
             document.getElementById('welcome-screen').classList.add('hidden');
             lanzarLluviaCorazones();
         }
 
-        // 4. LIGHTBOX DE FOTOS
+        // 3. LIGHTBOX DE FOTOS
         function abrirLightbox(elementoPolaroid) {
             const img = elementoPolaroid.querySelector('img').src;
             const caption = elementoPolaroid.querySelector('.polaroid-caption').innerText;
@@ -999,7 +839,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // 5. MODO VISTA PREVIA
+        // 4. MODO VISTA PREVIA PARA PROBAR FOTOS
         function togglePreviewMode() {
             document.body.classList.toggle('preview-mode');
             const btn = document.getElementById('btn-preview');
@@ -1019,20 +859,7 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
             }
         }
 
-        function cambiarVideoPreview(event, inputElement) {
-            const archivo = event.target.files[0];
-            if (archivo) {
-                const url = URL.createObjectURL(archivo);
-                const contenedor = inputElement.closest('.video-wrapper');
-                const video = contenedor.querySelector('video');
-                video.onerror = null;
-                video.src = url;
-                video.load();
-                video.play();
-            }
-        }
-
-        // 6. LLUVIA DE CORAZONES
+        // 5. LLUVIA DE CORAZONES
         function crearCorazon() {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
@@ -1056,4 +883,3 @@ Le incluí un sistema de búsqueda automática de videos en JavaScript al final 
     </script>
 </body>
 </html>
-
